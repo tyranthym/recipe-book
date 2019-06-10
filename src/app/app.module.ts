@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -36,6 +36,7 @@ import { MaxIntegerDirective } from './shared/CustomValidator/max-integer.direct
    imports: [
       BrowserModule,
       FormsModule,
+      ReactiveFormsModule,
       AppRountingModule
    ],
    providers: [],
