@@ -3,9 +3,8 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
 ## Angular CLI
-1. If you haven't installed Angular CLI -
 
-Run `npm install -g @angular/cli`
+Run `npm install -g @angular/cli` if you haven't installed Angular CLI yet.
 
 ## Development server
 

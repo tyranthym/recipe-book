@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -17,6 +18,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { MinIntegerDirective } from './shared/CustomValidator/min-integer.directive';
 import { MaxIntegerDirective } from './shared/CustomValidator/max-integer.directive';
 
+
 @NgModule({
    declarations: [
       AppComponent,
@@ -31,13 +33,14 @@ import { MaxIntegerDirective } from './shared/CustomValidator/max-integer.direct
       ShoppingEditComponent,
       DropdownDirective,
       MinIntegerDirective,
-      MaxIntegerDirective
+      MaxIntegerDirective,
    ],
    imports: [
       BrowserModule,
       FormsModule,
       ReactiveFormsModule,
-      AppRountingModule
+      AppRountingModule,
+      HttpClientModule
    ],
    providers: [],
    bootstrap: [
