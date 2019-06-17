@@ -1,0 +1,9 @@
+.navbar .navbar-nav.session-timer {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+  }

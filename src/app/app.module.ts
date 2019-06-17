@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -17,6 +17,11 @@ import { AppRountingModule } from './app-rounting.module';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { MinIntegerDirective } from './shared/CustomValidator/min-integer.directive';
 import { MaxIntegerDirective } from './shared/CustomValidator/max-integer.directive';
+import { AuthComponent } from './auth/auth.component';
+import { LoaderComponent } from './shared/loader/loader.component';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
+
+
 
 
 @NgModule({
@@ -34,6 +39,8 @@ import { MaxIntegerDirective } from './shared/CustomValidator/max-integer.direct
       DropdownDirective,
       MinIntegerDirective,
       MaxIntegerDirective,
+      AuthComponent,
+      LoaderComponent
    ],
    imports: [
       BrowserModule,
@@ -42,7 +49,7 @@ import { MaxIntegerDirective } from './shared/CustomValidator/max-integer.direct
       AppRountingModule,
       HttpClientModule
    ],
-   providers: [],
+   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }],
    bootstrap: [
       AppComponent
    ]
