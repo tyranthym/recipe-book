@@ -5,6 +5,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { throwError, BehaviorSubject } from 'rxjs';
 import { User } from './user.model';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 
 
@@ -12,8 +13,6 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-
-  private webApiKey = 'AIzaSyCz4pnjXI-cFzCsYknRoAiJuwb4BhCejHg';
 
   user = new BehaviorSubject<User>(null);
 
@@ -24,7 +23,7 @@ export class AuthService {
 
   signUp(email: string, password: string) {
     // tslint:disable-next-line: max-line-length
-    return this.http.post<AuthSignUpResponseData>('https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=' + this.webApiKey,
+    return this.http.post<AuthSignUpResponseData>('https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=' + environment.firebaseApiKey,
       {
         email,
         password,
@@ -54,7 +53,7 @@ export class AuthService {
 
   signIn(email: string, password: string) {
     // tslint:disable-next-line: max-line-length
-    return this.http.post<AuthSignInResponseData>('https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=' + this.webApiKey,
+    return this.http.post<AuthSignInResponseData>('https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=' + environment.firebaseApiKey,
       {
         email,
         password,
