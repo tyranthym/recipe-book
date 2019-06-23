@@ -6,9 +6,13 @@
       </div>
     </div>
     <hr />
-    <div class="alert alert-danger" *ngIf="errorMsg">
+
+    <!-- <div class="alert alert-danger" *ngIf="errorMsg">
       {{ errorMsg }}
-    </div>
+    </div> -->
+    <!-- <app-alert [message]="errorMsg" *ngIf="errorMsg" (closeAlert)="onHandleError()"></app-alert> -->
+    <ng-template appPlaceholder></ng-template>
+
     <div *ngIf="isLoading" style="text-align: center;">
       <app-loader></app-loader>
     </div>

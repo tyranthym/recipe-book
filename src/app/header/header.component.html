@@ -52,10 +52,7 @@
           <a style="cursor: pointer" (click)="onLogout()">Logout</a>
         </li>
       </ul>
-      <ul
-        class="nav navbar-nav session-timer"
-        *ngIf="isAuthenticated"
-      >
+      <ul class="nav navbar-nav session-timer" *ngIf="isAuthenticated">
         <p class="navbar-text">
           Your session will be ended within {{ expiresInSec }} sec
         </p>
